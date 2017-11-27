@@ -291,27 +291,94 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="256dp"
         android:layout_marginEnd="280dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="67dp"
         android:text="Solve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear1"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/ans1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="258dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="68dp"
+        android:id="@+id/X"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="266dp"
+        android:layout_marginTop="67dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+    <EditText
+        android:id="@+id/Y"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="266dp"
+        android:layout_marginTop="67dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+    <EditText
+        android:id="@+id/Z"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="266dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginTop="67dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="266dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="67dp"
+        android:text="X="
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/X"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sol_btn"
-        app:layout_constraintTop_toBottomOf="@+id/linear1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="266dp"
+        android:layout_marginEnd="265dp"
+        android:layout_marginTop="67dp"
+        android:text="Y="
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/X"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="266dp"
+        android:layout_marginTop="67dp"
+        android:text="Z="
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Z"
+        app:layout_constraintStart_toEndOf="@+id/Y"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
 </android.support.constraint.ConstraintLayout>
