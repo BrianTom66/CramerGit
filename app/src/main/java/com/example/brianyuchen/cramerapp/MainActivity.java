@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etd1;
     EditText etd2;
     EditText etd3;
+    TextView show;
 
 
     @Override
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         etX = (EditText) findViewById(R.id.X);
         etY = (EditText) findViewById(R.id.Y);
         etZ = (EditText) findViewById(R.id.Z);
+        show = (TextView) findViewById(R.id.showMsg);
         Button btn1 = (Button) findViewById(R.id.sol_btn);
 
 
@@ -75,19 +78,26 @@ public class MainActivity extends AppCompatActivity {
                 int deltaZ = ((a1 * b2 * d3) + (b1 * d2 * a3) + (d1 * a2 * b3)) - ((d1 * b2 * a3) + (a1 * d2 * b3) + (b1 * a2 * d3));
 
                 if (delta != 0) {
-                    float X = deltaX / delta;
-                    float Y = deltaY / delta;
-                    float Z = deltaZ / delta;
+                    float X = (float) deltaX / delta;
+                    float Y = (float) deltaY / delta;
+                    float Z = (float) deltaZ / delta;
 //                    int tmp = Integer.parseInt(a1.getText().toString());
                     etX.setText(X + "");
                     etY.setText(Y + "");
                     etZ.setText(Z + "");
+                    show.setText("恰有一解");
 
 
-//                } else if(delta == 0 && (deltaX != 0 || deltaY != 0 || deltaZ != 0)) {
-//                    etans.setText("無解");
-//                }
+                } else if(delta == 0 && (deltaX != 0 || deltaY != 0 || deltaZ != 0)) {
+                    show.setText("無解");
+                    etX.setText("");
+                    etY.setText("");
+                    etZ.setText("");
                 }
+                else if(delta == 0 && deltaX == 0 && deltaY == 0 && deltaZ ==0) {
+
+                }
+
             }
 
         });
