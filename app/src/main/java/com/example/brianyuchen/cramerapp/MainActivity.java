@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn1 = (Button) findViewById(R.id.sol_btn);
 
 
-
-
        // Button solBtn = (Button)findViewById(R.id.solbtn);
 
         btn1.setOnClickListener(new OnClickListener() {
@@ -96,6 +94,40 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(delta == 0 && deltaX == 0 && deltaY == 0 && deltaZ ==0) {
 
+                    if(((a1*b2 - a2*b1) == 0 || (b2*a3 - b3*a2) == 0)) {
+                        show.setText("無解");
+                        etX.setText("");
+                        etY.setText("");
+                        etZ.setText("");
+                    } else {
+                        // X = ?? del Y
+                        // (a1*b2 - a2*b1) >> A_T
+                        // (c1*b2 - c2*b1) >> C_T
+                        // (d1*b2 - d2*b1) >> D_T
+                        // X = (D_T / A_T) - (C_T / A_T)
+                        // Y = ?? del X
+                        // (b2*a3 - b3*a2) >> B_T
+                        // (d2*a3 - d3*a2) >> D_T
+                        // (c2*a3 - c3*a2) >> C_T
+                        // Y = (D_T / B_T) - (C_T / B_T)
+                        float X_var = ((float) (d1 * b2 - d2 * b1) / (a1 * b2 - a2 * b1));
+                        float X_t = ((float) (-(c1 * b2 - c2 * b1) / (a1 * b2 - a2 * b1))); // add minus
+                        float Y_var = ((float) (d2 * a3 - d3 * a2) / (b2 * a3 - b3 * a2));
+                        float Y_t = ((float) (-(c2 * a3 - c3 * a2) / (b2 * a3 - b3 * a2)));
+                        if (X_t >= 0) {
+                            etX.setText(X_var + "+" + X_t + "t");
+                        } else {
+                            etX.setText(X_var + "" + X_t + "t");
+                        }
+                        if (Y_t >= 0) {
+                            etY.setText(Y_var + "+" + Y_t + "t");
+                        } else {
+                            etY.setText(Y_var + "" + Y_t + "t");
+                        }
+                        etZ.setText("t");
+                        show.setText("無限多組解, t為實數");
+
+                    }
                 }
 
             }
